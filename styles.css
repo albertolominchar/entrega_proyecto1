@@ -35,6 +35,9 @@ h1 > img {
   list-style: none;
   gap: 32px;
 }
+.menu > li {
+  padding: 5px;
+}
 #outlet-color {
   color: var(--terciary-color);
   font-weight: 700;
@@ -43,12 +46,117 @@ h1 > img {
   text-decoration: none;
   color: var(--primary-color);
 }
+.menu a:hover {
+  text-decoration: underline;
+}
 #arrow-icon {
   display: flex;
   margin: auto;
 }
 #arrow-icon img {
   width: 16px;
+}
+#designer {
+  position: relative;
+  background-color: #fff;
+}
+#designer > div {
+  visibility: hidden;
+  position: absolute;
+  bottom: -95px;
+  left: -10px;
+  width: 160px;
+  height: 95px;
+  box-shadow: 0 0 10px rgba(5, 5, 5, 0.075);
+  z-index: 10;
+}
+#designer:hover > div {
+  visibility: visible;
+  animation: top-entry 0.4s ease;
+}
+#designer > div:hover {
+  visibility: visible;
+}
+#designer-submenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  list-style: none;
+  background-color: #fff;
+}
+#community {
+  position: relative;
+  background-color: #fff;
+}
+#community > div {
+  visibility: hidden;
+  position: absolute;
+  bottom: -132px;
+  left: -10px;
+  width: 160px;
+  height: 132px;
+  box-shadow: 0 0 10px rgba(5, 5, 5, 0.075);
+}
+#community:hover > div {
+  visibility: visible;
+  animation: top-entry 0.4s ease;
+}
+#community > div:hover {
+  visibility: visible;
+}
+#community-submenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  list-style: none;
+  background-color: #fff;
+}
+#gifts {
+  position: relative;
+  background-color: #fff;
+}
+#gifts > div {
+  visibility: hidden;
+  position: absolute;
+  bottom: -70px;
+  left: -10px;
+  width: 140px;
+  height: 70px;
+  box-shadow: 0 0 10px rgba(5, 5, 5, 0.075);
+}
+#gifts:hover > div {
+  visibility: visible;
+  animation: top-entry 0.4s ease;
+}
+#gifts > div:hover {
+  visibility: visible;
+}
+#gifts-submenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  list-style: none;
+  background-color: #fff;
+}
+@keyframes top-entry {
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 .menu-right {
   display: flex;

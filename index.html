@@ -17,7 +17,9 @@
     <header>
       <nav>
         <h1>
-          <img src="./assets/logo/pampling-logo.svg" alt="Logo de Pampling" />
+          <a href="#">
+            <img src="./assets/logo/pampling-logo.svg" alt="Logo de Pampling" />
+          </a>
         </h1>
         <div>
           <ul class="menu">
@@ -85,13 +87,63 @@
               </a>
             </li>
             <li id="lang-icon">
-              <a href="#">
+              <label for="lang-check">
                 <p>ES</p>
                 <img
                   src="./assets/icons/arrow-icon.svg"
                   alt="Logo punta de flecha"
                 />
-              </a>
+              </label>
+              <input type="checkbox" name="lang-check" id="lang-check" />
+              <div>
+                <ul id="menu-lang">
+                  <li class="item-lang" id="esp-item">
+                    <a href="#">
+                      <img
+                        src="./assets/icons/Languages/es.png"
+                        alt="Bandera de España"
+                      />
+                      <p>Español</p>
+                    </a>
+                  </li>
+                  <li class="item-lang" id="eng-item">
+                    <a href="#">
+                      <img
+                        src="./assets/icons/Languages/en.png"
+                        alt="Bandera de Reino Unido"
+                      />
+                      <p>Inglés</p>
+                    </a>
+                  </li>
+                  <li class="item-lang" id="fr-item">
+                    <a href="#">
+                      <img
+                        src="./assets/icons/Languages/fr.png"
+                        alt="Bandera de Francia"
+                      />
+                      <p>Francés</p>
+                    </a>
+                  </li>
+                  <li class="item-lang" id="it-item">
+                    <a href="#">
+                      <img
+                        src="./assets/icons/Languages/it.png"
+                        alt="Bandera de Italia"
+                      />
+                      <p>Italiano</p>
+                    </a>
+                  </li>
+                  <li class="item-lang" id="ger-item">
+                    <a href="#">
+                      <img
+                        src="./assets/icons/Languages/ge.png"
+                        alt="Bandera de Alemania"
+                      />
+                      <p>Alemán</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li>|</li>
             <li id="user-icon">
@@ -120,9 +172,43 @@
     </header>
     <main>
       <div class="banner">
-        <img src="./assets/images/banner-home.jpg" alt="Banner de rebajas" />
+        <a href="#">
+          <img src="./assets/images/banner-home.jpg" alt="Banner de rebajas" />
+        </a>
       </div>
-      <section></section>
+      <section class="featured">
+        <a href="#" class="featured-card">
+          <div class="title-featured-card">
+            <h2 class="name-shirt">Campfire Tales</h2>
+            <p class="price-featured"><span>9.90 €</span></p>
+          </div>
+          <img
+            src="./assets/images/featured-cards-images/producto_1.jpg"
+            alt="Campfire tales"
+          />
+        </a>
+        <a href="#" class="featured-card">
+          <div class="title-featured-card">
+            <h2 class="name-shirt">Psicopato</h2>
+            <p class="price-featured"><span>9.90 €</span></p>
+          </div>
+          <img
+            src="./assets/images/featured-cards-images/producto_2.jpg"
+            alt="Psicopato"
+          />
+        </a>
+        <a href="#" class="featured-card">
+          <div class="title-featured-card">
+            <h2 class="name-shirt">The Beers</h2>
+            <p class="price-featured"><span>9.90 €</span></p>
+          </div>
+          <img
+            src="./assets/images/featured-cards-images/producto_3.jpg"
+            alt="The beers"
+          />
+        </a>
+      </section>
+      <section class="new-designs"></section>
     </main>
     <footer></footer>
   </body>

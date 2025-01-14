@@ -28,6 +28,16 @@ nav {
   color: var(--primary-color);
   padding: 10px 20px;
 }
+/* MENU-IZQUIERDA */
+.menu-left {
+  display: none;
+}
+.menu-left > label img {
+  height: 50px;
+}
+.menu-left > input {
+  visibility: hidden;
+}
 h1 {
   min-width: 200px;
 }
@@ -357,7 +367,7 @@ main {
   justify-content: center;
 }
 .trust-pilot img {
-  width: 30%;
+  width: 40%;
 }
 .new-designs {
   width: 100vw;
@@ -368,5 +378,25 @@ main {
 @media screen and (max-width: 1150px) {
   .menu {
     display: none;
+  }
+  #lang-icon {
+    display: none;
+  }
+  .menu-left {
+    display: flex;
+  }
+  h1 {
+    margin: auto;
+  }
+  .featured {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .featured a {
+    width: 500px;
+  }
+  .trust-pilot img {
+    width: 60%;
   }
 }

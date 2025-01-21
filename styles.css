@@ -7,6 +7,14 @@
     transform: translateY(0);
   }
 }
+@keyframes top-entry-catalogue {
+  from {
+    transform: translateY(-7px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 @keyframes left-entry {
   from {
     transform: translateX(-900px);
@@ -52,6 +60,7 @@ nav {
   font-weight: 500;
   color: var(--primary-color);
   padding: 10px 20px;
+  position: relative;
 }
 /* MENU-IZQUIERDA */
 .menu-left {
@@ -66,8 +75,7 @@ nav {
 .menu-left > div {
   display: none;
   width: 100vw;
-  height: 100%;
-  background-color: var(--secondary-color);
+  height: 100vh;
   z-index: 50;
   position: absolute;
   top: 86.25px;
@@ -82,6 +90,7 @@ nav {
   padding: 0px 30px;
   list-style: none;
   gap: 15px;
+  background-color: var(--secondary-color);
 }
 .menu-left-hidden > li {
   padding: 10px 0px;
@@ -91,7 +100,7 @@ nav {
   font-size: 24px;
   color: var(--hidden-menu-color);
 }
-.menu-left-hidden a {
+.menu-left-hidden label {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,6 +109,28 @@ nav {
   font-weight: 600;
   font-size: 24px;
   color: var(--hidden-menu-color);
+}
+#outlet-hidden > a {
+  text-decoration: none;
+  font-family: 'Barlow Condensed', helvetica;
+  font-weight: 600;
+  font-size: 24px;
+}
+#shop-hidden > a {
+  text-decoration: none;
+  font-family: 'Barlow Condensed', helvetica;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--hidden-menu-color);
+}
+#designer-check {
+  display: none;
+}
+#community-check {
+  display: none;
+}
+#gifts-check {
+  display: none;
 }
 #languages-hidden {
   display: flex;
@@ -137,15 +168,25 @@ nav {
 .languages-icon-hidden li:first-child > a {
   color: var(--secondary-color);
 }
-#designer-submenu-hidden {
+.submenu-hidden {
   display: none;
 }
-#community-submenu-hidden {
-  display: none;
+.submenu-hidden li {
+  list-style: none;
+  padding: 10px 0px;
 }
-#gifts-submenu-hidden {
-  display: none;
+.submenu-hidden > li > a {
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Poppins', helvetica;
+  font-weight: 400;
+  color: var(--primary-color);
 }
+.hidden-check:checked + .submenu-hidden {
+  display: flex;
+  flex-direction: column;
+}
+/* H1 */
 h1 {
   min-width: 200px;
 }
@@ -181,9 +222,62 @@ h1 > img {
 .arrow-icon img {
   width: 16px;
 }
+#catalogue {
+  padding: 20px 0px;
+}
+#catalogue > div {
+  position: absolute;
+  bottom: -60vh;
+  left: 0px;
+  width: 100vw;
+  height: 62vh;
+  padding-top: 10px;
+  background-color: var(--secondary-color);
+  visibility: hidden;
+}
+#catalogue-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+  margin-left: 20px;
+  background-color: var(--secondary-color);
+}
+#catalogue-container p {
+  font-size: 16px;
+  font-family: 'Poppins', helvetica;
+  padding: 5px 0px;
+  font-weight: 600;
+  border-bottom: 1px solid #c5c5c5;
+}
+#catalogue-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 90%;
+  list-style: none;
+  padding: 10px 0px;
+}
+#catalogue-list li {
+  padding: 9px 0px;
+  width: 50%;
+}
+#catalogue-list a {
+  font-size: 14px;
+  font-family: 'Poppins', helvetica;
+  font-weight: 300;
+}
+#catalogue:hover > div {
+  visibility: visible;
+  animation: top-entry-catalogue 0.3s ease-out;
+}
+#catalogue > div:hover {
+  visibility: visible;
+}
 #designer {
   position: relative;
-  background-color: #fff;
+  background-color: var(--secondary-color);
 }
 #designer > div {
   visibility: hidden;
@@ -211,11 +305,11 @@ h1 > img {
   height: 100%;
   font-weight: 400;
   list-style: none;
-  background-color: #fff;
+  background-color: var(--secondary-color);
 }
 #community {
   position: relative;
-  background-color: #fff;
+  background-color: var(--secondary-color);
 }
 #community > div {
   visibility: hidden;
@@ -224,6 +318,7 @@ h1 > img {
   left: -10px;
   width: 160px;
   height: 132px;
+  background-color: var(--secondary-color);
   box-shadow: 0 0 10px rgba(5, 5, 5, 0.075);
 }
 #community:hover > div {
@@ -242,11 +337,11 @@ h1 > img {
   height: 100%;
   font-weight: 400;
   list-style: none;
-  background-color: #fff;
+  background-color: var(--secondary-color) f;
 }
 #gifts {
   position: relative;
-  background-color: #fff;
+  background-color: var(--secondary-color);
 }
 #gifts > div {
   visibility: hidden;
@@ -273,7 +368,7 @@ h1 > img {
   height: 100%;
   font-weight: 400;
   list-style: none;
-  background-color: #fff;
+  background-color: var(--secondary-color);
 }
 /* MENU-DERECHA */
 .menu-right-list {
@@ -327,7 +422,7 @@ label {
   width: 100%;
   height: 100%;
   list-style: none;
-  background-color: white;
+  background-color: var(--secondary-color);
   padding: 5px 0px;
 }
 .item-lang {
@@ -373,11 +468,13 @@ label {
 #cart-icon img {
   width: 24px;
 }
+/* MAIN */
 main {
   display: flex;
   flex-direction: column;
   gap: 3vh;
 }
+/* BANNER */
 .banner {
   width: 100vw;
   height: 70.5vh;
@@ -388,6 +485,7 @@ main {
   object-fit: cover;
   object-position: center;
 }
+/* FEATURED-SECTION */
 .featured {
   display: flex;
   width: 100vw;
@@ -460,6 +558,7 @@ main {
 .featured-card-button:hover + .featured-card > img {
   opacity: 0.4;
 }
+/* TRUSTPILOT */
 .trust-pilot {
   display: flex;
   width: 100vw;
@@ -468,11 +567,13 @@ main {
 .trust-pilot img {
   width: 40%;
 }
+/* NEW-DESIGNS-SECTION */
 .new-designs {
   width: 100vw;
   height: 500px;
-  background-color: #f92b89;
+  background-color: var(--terciary-color);
 }
+/* SLIDER */
 .slider {
   width: 100vw;
   display: flex;
@@ -481,7 +582,6 @@ main {
   background-color: var(--primary-color);
   gap: 100px;
 }
-
 .slider p {
   color: var(--secondary-color);
   font-family: 'Barlow Condensed', helvetica;
@@ -491,6 +591,7 @@ main {
   white-space: nowrap;
   animation: scroll 6s linear infinite;
 }
+/* SERVICE-SECTION */
 .services {
   width: 100vw;
   height: auto;
@@ -523,6 +624,7 @@ main {
   font-family: 'Poppins', helvetica;
   color: var(--primary-color);
 }
+/* NO-SHIRTS-SECTION */
 .no-shirts {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -598,6 +700,7 @@ main {
   font-family: 'Poppins', helvetica;
   font-weight: 700;
 }
+/* BEST-GRAPHICS-SECTION */
 .best-graphics {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -662,12 +765,13 @@ main {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.shirt-card p {
+.shirt-card > p {
   font-size: 24px;
   font-family: 'Barlow Condensed', helvetica;
   color: var(--primary-color);
   padding: 0px 12px 12px;
   font-weight: 500;
+  background-color: var(--secondary-color);
 }
 .price-card {
   padding: 0px 12px 12px;
@@ -675,6 +779,9 @@ main {
   font-family: 'Poppins', helvetica;
   font-weight: 500;
   position: relative;
+  background-color: var(--secondary-color);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .price-card del {
   color: #8f8f8f;
@@ -706,10 +813,10 @@ main {
 }
 .add-button p {
   color: var(--secondary-color);
-  font-size: 14px;
+  font-size: 13px;
   font-family: 'Poppins';
   font-weight: 500;
-  padding: 10px 30px;
+  padding: 10px 0px;
 }
 .shirt-card:hover > .add-button {
   opacity: 1;
@@ -719,23 +826,20 @@ main {
 #selection-one {
   grid-row: 1/2;
   grid-column: 3/4;
-  background-color: var(--secondary-color);
 }
 #selection-two {
   grid-row: 1/2;
   grid-column: 4/5;
-  background-color: var(--secondary-color);
 }
 #selection-three {
   grid-row: 2/3;
   grid-column: 3/4;
-  background-color: var(--secondary-color);
 }
 #selection-four {
   grid-row: 2/3;
   grid-column: 4/5;
-  background-color: var(--secondary-color);
 }
+/* EXPLORER-SECTION */
 .explorer-section h2 {
   font-size: 48px;
   font-family: 'Barlow Condensed', helvetica;
@@ -752,10 +856,8 @@ main {
 }
 .explorer-shirts > div {
   width: calc(25% - 20px);
-  max-width: 300px;
-  min-width: 250px;
-  flex: 1 1;
   margin: 10px;
+  border: 1px solid #f3f2f2;
 }
 .explorer-section > a {
   display: flex;
@@ -766,14 +868,15 @@ main {
   font-size: 14px;
   font-family: 'Poppins';
   font-weight: 500;
-  padding: 10px 60px;
+  padding: 15px 0px;
   border-radius: 50px;
   text-decoration: none;
-  margin: 0px auto;
+  margin: 20px auto;
 }
 .explorer-section > a:hover {
   text-decoration: underline;
 }
+/* TRUSTPILOT-CAROUSEL */
 .trust-pilot-carousel {
   width: 100vw;
   padding: 30px 20px;
@@ -816,9 +919,10 @@ main {
   .shirt-card p {
     font-size: 20px;
   }
+  .add-button {
+    bottom: 40%;
+  }
   .add-button p {
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 30px;
+    font-size: 12px;
   }
 }
